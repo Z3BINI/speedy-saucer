@@ -16,3 +16,5 @@ shape = SubResource("CircleShape2D_uvgbf")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 999
 texture = ExtResource("1_k2ybv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
