@@ -8,8 +8,9 @@ radius = 45.5412
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_k2ybv")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uvgbf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 999
+texture = ExtResource("1_k2ybv")
