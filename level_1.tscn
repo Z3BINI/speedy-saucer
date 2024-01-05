@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyr6s1ed6syka"]
+[gd_scene load_steps=7 format=3 uid="uid://cyr6s1ed6syka"]
 
 [ext_resource type="Texture2D" uid="uid://c6003pjihwj73" path="res://assets/purple.png" id="1_hxdpd"]
 [ext_resource type="Script" path="res://level_1.gd" id="1_m6ov4"]
 [ext_resource type="PackedScene" uid="uid://qbrtnoimcx1b" path="res://player.tscn" id="2_acmjm"]
 [ext_resource type="PackedScene" uid="uid://txwy03mnw33o" path="res://maze.tscn" id="4_4ou5e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vald7"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_gobhv"]
+font_size = 48
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_m6ov4")
@@ -23,5 +29,33 @@ stretch_mode = 1
 [node name="Player" parent="." instance=ExtResource("2_acmjm")]
 
 [node name="Maze" parent="." instance=ExtResource("4_4ou5e")]
+
+[node name="Tutorial" type="Label" parent="."]
+offset_left = -629.0
+offset_top = -294.0
+offset_right = -83.0
+offset_bottom = -146.0
+text = "Rules:
+- WASD or Arrow keys to move
+- Go through the maze and don't
+touch the edges!!"
+label_settings = SubResource("LabelSettings_vald7")
+horizontal_alignment = 1
+
+[node name="StartLabel" type="Label" parent="."]
+offset_left = -91.0
+offset_top = 44.0
+offset_right = 52.0
+offset_bottom = 114.0
+text = "START"
+label_settings = SubResource("LabelSettings_gobhv")
+
+[node name="EndLabel" type="Label" parent="."]
+offset_left = 4932.0
+offset_top = 2576.0
+offset_right = 5032.0
+offset_bottom = 2646.0
+text = "END"
+label_settings = SubResource("LabelSettings_gobhv")
 
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
